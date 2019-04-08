@@ -1,0 +1,6 @@
+npm-debug.log
+node_modules
+.editorconfig
+.idea
+bower_components
+package-lock.json

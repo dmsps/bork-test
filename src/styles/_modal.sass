@@ -1,0 +1,117 @@
+.modal 
+  font-family: $font
+
+  &__overlay 
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0,0,0,0.5)
+    display: flex
+    justify-content: center
+    align-items: center
+
+  &__container
+    position: relative
+    background-color: transparent
+    padding: 30px
+    width: 100%
+    max-width: 626px
+    max-height: 100vh
+    border-radius: 4px
+    overflow-y: auto
+    box-shadow: 0 2px 32px rgba(0, 0, 0, 0.5)
+    overflow: hidden
+
+    @media (max-width: 670px)
+      margin-left: 20px
+      margin-right: 20px
+
+    &__bg
+      position: absolute
+      width: 100vw
+      height: 100vh
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur")
+      filter: blur(10px) brightness(110%)
+      object-fit: cover
+      pointer-events: none
+
+    &__header 
+      display: flex
+      align-items: center
+
+  &__close
+    display: flex
+    align-items: center
+    opacity: 0.8
+    color: #ffffff
+    font-size: 10px
+    letter-spacing: 1px
+    background: none
+    border: 0
+    padding: 0
+    cursor: pointer
+    text-transform: uppercase
+
+    &:hover
+      outline: none
+
+    svg
+      margin-right: 7px
+
+  &__content
+    position: relative
+    width: 100%
+    max-width: 369px
+    margin-left: auto
+    margin-right: auto
+
+@keyframes mmfadeIn 
+    from 
+       opacity: 0
+    to 
+      opacity: 1
+
+@keyframes mmfadeOut 
+    from 
+      opacity: 1 
+    to 
+      opacity: 0
+
+@keyframes mmslideIn 
+  from 
+    transform: translateY(15%)
+  to
+    transform: translateY(0)
+
+@keyframes mmslideOut 
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(-10%)
+
+.micromodal-slide 
+  display: none;
+
+.micromodal-slide.is-open 
+  display: block;
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay 
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+
+.micromodal-slide[aria-hidden="false"] .modal__container 
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1)
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay 
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1)
+
+.micromodal-slide[aria-hidden="true"] .modal__container 
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1)
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay 
+  will-change: transform

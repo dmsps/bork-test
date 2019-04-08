@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Login Page | Bork</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <main class="main">
+      <button class="button" data-micromodal-trigger="modal" type="button">
+        Войти
+      </button>
+    </main>
+
+    <div class="modal micromodal-slide" id="modal" aria-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+        <div
+          class="modal__container"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
+          <img class="modal__container__bg" src="../img/main-bg.jpg" alt="" />
+          <header class="modal__header">
+            <button
+              class="modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="15"
+                height="9"
+                viewBox="0 0 15 9"
+              >
+                <defs>
+                  <path id="vlr6a" d="M387 255l-4 3.5 4 3.5" />
+                  <path id="vlr6b" d="M383.18 258.5h12.64" />
+                </defs>
+                <g>
+                  <g opacity=".5" transform="translate(-382 -254)">
+                    <g opacity=".5">
+                      <use
+                        fill="#fff"
+                        fill-opacity="0"
+                        stroke="#fff"
+                        stroke-miterlimit="50"
+                        xlink:href="#vlr6a"
+                      />
+                    </g>
+                    <g opacity=".5">
+                      <use
+                        fill="#fff"
+                        fill-opacity="0"
+                        stroke="#fff"
+                        stroke-linecap="square"
+                        stroke-miterlimit="50"
+                        xlink:href="#vlr6b"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              Вернуться
+            </button>
+          </header>
+          <main class="modal__content" id="modal-content">
+            <div class="avatar">
+              <img src="img/avatar.png" alt="Avatar" />
+            </div>
+            <form id="loginForm" class="login" action="#">
+              <div class="field">
+                <input
+                  type="text"
+                  name="phone"
+                  id="loginPhone"
+                  tabindex="1"
+                  required
+                />
+                <label for="loginPhone"><span>Номер телефона</span></label>
+              </div>
+
+              <div class="field">
+                <input
+                  type="password"
+                  name="password"
+                  id="loginPassword"
+                  minlength="6"
+                  tabindex="2"
+                  required
+                />
+                <label for="loginPassword"><span>Пароль</span></label>
+              </div>
+
+              <div class="login__options">
+                <div class="checkbox">
+                  <input type="checkbox" name="remember" id="loginRemember" />
+                  <label for="loginRemember">
+                    Запомнить
+                  </label>
+                </div>
+                <a href="#" class="login__resetpass">Забыл пароль</a>
+              </div>
+
+              <button
+                id="submitLoginForm"
+                class="button"
+                type="submit"
+                tabindex="3"
+              >
+                Войти
+              </button>
+            </form>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/vendor.js"></script>
+    <script src="/scripts/script.js"></script>
+  </body>
+</html>

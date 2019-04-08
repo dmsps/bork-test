@@ -1,0 +1,31 @@
+.button
+  display: flex
+  align-items: center
+  justify-content: center
+  min-width: 151px
+  height: 48px
+  border-radius: 25px
+  border: 1px solid #ffffff
+  color: #ffffff
+  font-family: $font
+  text-transform: uppercase
+  font-size: 12px
+  font-weight: 500
+  letter-spacing: 2.53px
+  background: transparent
+  cursor: pointer
+  -webkit-appearance: none;
+  @extend %fade
+
+  &:hover,
+  &:focus
+    color: #000000
+    background: #ffffff
+    outline: none
+
+  &:active
+    letter-spacing: 2.5px
+  
+  &.disabled
+    opacity: 0.2
+    pointer-events: none
