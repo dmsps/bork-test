@@ -1,3 +1,6 @@
+import MicroModal from "micromodal";
+import "jquery-mask-plugin";
+
 $(function() {
   let phoneValid = false,
     passwordValid = false;
